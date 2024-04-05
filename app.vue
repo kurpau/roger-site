@@ -1,7 +1,9 @@
 <template>
   <NavbarTop />
+  <ul>
+    <li v-for="product in products">{{ product.title }}</li>
+  </ul>
+  <NuxtPage />
 </template>
 
-<script lang="ts" setup>
-import NavbarTop from "/src/components/NavbarTop.vue";
-</script>
+<script lang="ts" setup></script>
