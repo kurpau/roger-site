@@ -5,5 +5,5 @@ export default defineNuxtConfig({
     // prerender index route by default
     "/": { prerender: true },
   },
-  modules: ["@nuxtjs/tailwindcss"],
+  modules: ["@nuxtjs/tailwindcss", "nuxt-medusa", "@nuxt/image"],
 });
