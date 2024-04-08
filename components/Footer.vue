@@ -87,7 +87,7 @@
       <p
         class="flex justify-center items-center py-2 leading-5 text-center md:ml-6 typography-text-sm text-white/50 font-body"
       >
-        @2024 Alokai
+        @2024 Fansr
       </p>
     </div>
   </footer>

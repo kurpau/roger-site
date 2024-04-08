@@ -24,18 +24,24 @@
       </SfButton>
     </div>
     <div class="p-4 border-t border-neutral-200">
-      <SfLink variant="secondary" class="no-underline">
-        <NuxtLink :to="`/products/${id}`">
-          {{ title }}
-        </NuxtLink>
+      <SfLink
+        :tag="NuxtLink"
+        :href="`/products/${id}`"
+        variant="secondary"
+        class="no-underline"
+      >
+        {{ title }}
       </SfLink>
       <div class="flex items-center pt-1">
         <SfRating size="xs" :value="5" :max="5" />
 
-        <SfLink variant="secondary" class="pl-1 no-underline">
-          <NuxtLink :to="`/products/${id}`">
-            <SfCounter size="xs">123</SfCounter>
-          </NuxtLink>
+        <SfLink
+          :tag="NuxtLink"
+          :href="`/products/${id}`"
+          variant="secondary"
+          class="pl-1 no-underline"
+        >
+          <SfCounter size="xs">123</SfCounter>
         </SfLink>
       </div>
       <p
@@ -64,5 +70,8 @@ import {
   SfIconFavorite,
 } from "@storefront-ui/vue";
 
+import { resolveComponent } from "vue";
+
+const NuxtLink = resolveComponent("NuxtLink");
 defineProps(["title", "description", "price", "thumbnail", "id"]);
 </script>

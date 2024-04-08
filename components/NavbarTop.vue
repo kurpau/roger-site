@@ -5,8 +5,8 @@
     <div
       class="flex flex-row flex-wrap justify-start items-center w-full h-full lg:flex-nowrap max-w-[1536px]"
     >
-      <a
-        href="#"
+      <NuxtLink
+        to="/"
         aria-label="SF Homepage"
         class="inline-block mr-4 focus-visible:rounded-sm shrink-0 focus-visible:outline focus-visible:outline-offset"
       >
@@ -23,7 +23,7 @@
             class="w-8 h-8 md:h-6 md:w-[176px] lg:w-[12.5rem] lg:h-[1.75rem]"
           />
         </picture>
-      </a>
+      </NuxtLink>
       <SfButton
         aria-label="Open categories"
         class="order-first mr-4 lg:hidden lg:order-1"
@@ -32,12 +32,11 @@
       >
         <SfIconMenu />
       </SfButton>
-      <SfButton class="hidden lg:flex lg:mr-4" type="button" variant="tertiary">
-        <template #suffix>
-          <SfIconExpandMore class="hidden lg:block" />
-        </template>
-        <span class="hidden whitespace-nowrap lg:flex">Browse products</span>
-      </SfButton>
+      <NuxtLink to="/products">
+        <SfButton class="hidden lg:flex lg:mr-4" type="button" size="sm">
+          <span class="hidden whitespace-nowrap lg:flex">Products</span>
+        </SfButton>
+      </NuxtLink>
       <form
         role="search"
         class="flex flex-[100%] order-last lg:order-3 mt-2 lg:mt-0 pb-2 lg:pb-0"
