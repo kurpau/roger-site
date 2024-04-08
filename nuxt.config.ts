@@ -6,4 +6,7 @@ export default defineNuxtConfig({
     "/": { prerender: true },
   },
   modules: ["@nuxtjs/tailwindcss", "nuxt-medusa", "@nuxt/image"],
+  image: {
+    domains: ["medusa-public-images.s3.eu-west-1.amazonaws.com"],
+  },
 });
