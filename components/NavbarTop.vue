@@ -33,8 +33,8 @@
         <SfIconMenu />
       </SfButton>
       <NuxtLink to="/products">
-        <SfButton class="hidden lg:flex lg:mr-4" type="button" size="sm">
-          <span class="hidden whitespace-nowrap lg:flex">Products</span>
+        <SfButton class="lg:flex lg:mr-4" type="button" size="sm">
+          <span class="whitespace-nowrap lg:flex">Products</span>
         </SfButton>
       </NuxtLink>
       <form

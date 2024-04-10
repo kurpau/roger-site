@@ -9,4 +9,10 @@ export default defineNuxtConfig({
   image: {
     domains: ["medusa-public-images.s3.eu-west-1.amazonaws.com"],
   },
+  app: {
+    head: {
+      title: "Fansr",
+      meta: [{ name: "description", content: "Preped meals to your door" }],
+    },
+  },
 });
