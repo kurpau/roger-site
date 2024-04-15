@@ -32,41 +32,25 @@
       >
         <SfIconMenu />
       </SfButton>
-      <NuxtLink to="/products">
-        <SfButton class="lg:flex lg:mr-4" type="button" size="sm">
-          <span class="whitespace-nowrap lg:flex">Products</span>
-        </SfButton>
-      </NuxtLink>
-      <form
-        role="search"
-        class="flex flex-[100%] order-last lg:order-3 mt-2 lg:mt-0 pb-2 lg:pb-0"
-        @submit.prevent="search"
-      >
-        <SfInput
-          v-model="inputValue"
-          type="search"
-          class="[&::-webkit-search-cancel-button]:appearance-none"
-          placeholder="Search"
-          wrapper-class="flex-1 pr-0 h-10"
-          size="base"
-        >
-          <template #suffix>
-            <span class="flex items-center">
-              <SfButton
-                variant="tertiary"
-                square
-                aria-label="search"
-                type="submit"
-                class="rounded-l-none hover:bg-transparent active:bg-transparent"
-              >
-                <SfIconSearch />
-              </SfButton>
-            </span>
-          </template>
-        </SfInput>
-      </form>
       <nav class="flex flex-1 justify-end lg:order-last lg:ml-4">
         <div class="flex flex-row flex-nowrap">
+          <ul class="flex gap-4 items-center">
+            <li>
+              <NuxtLink class="hover:text-primary-700" to="/">Home</NuxtLink>
+            </li>
+            <li>
+              <NuxtLink class="hover:text-primary-700" to="/about"
+                >About</NuxtLink
+              >
+            </li>
+            <li>
+              <NuxtLink to="/products">
+                <SfButton class="lg:flex lg:mr-4" type="button" size="sm">
+                  <span class="whitespace-nowrap lg:flex">Products</span>
+                </SfButton>
+              </NuxtLink>
+            </li>
+          </ul>
           <SfButton
             v-for="actionItem in actionItems"
             :key="actionItem.ariaLabel"
@@ -108,18 +92,6 @@ const actionItems = [
     ariaLabel: "Cart",
     role: "button",
     label: "",
-  },
-  {
-    icon: SfIconFavorite,
-    ariaLabel: "Wishlist",
-    role: "button",
-    label: "",
-  },
-  {
-    label: "Log in",
-    icon: SfIconPerson,
-    ariaLabel: "Log in",
-    role: "login",
   },
 ];
 

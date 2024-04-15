@@ -2,7 +2,7 @@
   <div class="flex flex-col h-screen">
     <NavbarTop />
 
-    <div>
+    <div class="m-auto my-4 max-w-screen-2xl">
       <slot />
     </div>
 

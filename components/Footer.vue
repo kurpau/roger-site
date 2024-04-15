@@ -1,7 +1,7 @@
 <template>
   <footer class="pt-10 bg-neutral-100">
     <div
-      class="grid justify-center grid-cols-[1fr_1fr] md:grid-cols-[repeat(4,1fr)] px-4 md:px-6 pb-10 max-w-[1536px] mx-auto"
+      class="grid justify-center grid-cols-[1fr_1fr] md:grid-cols-[repeat(4,1fr)] px-4 md:px-6 pb-10 max-w-screen-2xl mx-auto"
     >
       <ul
         v-for="{ label, subcategories } in categories"
@@ -29,7 +29,7 @@
       </ul>
     </div>
     <hr />
-    <div class="py-10 md:flex md:mx-auto max-w-[1536px]">
+    <div class="py-10 max-w-screen-2xl md:flex md:mx-auto">
       <div
         v-for="{ label, icon, link, details } in contactOptions"
         :key="label"
@@ -55,7 +55,7 @@
       </div>
     </div>
     <div
-      class="justify-end py-10 px-4 mx-auto md:flex md:py-6 bg-neutral-900 max-w-[1536px]"
+      class="justify-end py-10 px-4 mx-auto max-w-screen-2xl md:flex md:py-6 bg-neutral-900"
     >
       <div class="flex gap-x-4 justify-center py-2 md:self-start">
         <SfButton
