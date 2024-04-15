@@ -23,5 +23,12 @@ try {
       <Meta name="description" :content="product.description" />
     </Head>
     <ProductDetails :product="product" />
+
+    <SfButton size="sm">
+      <template #prefix>
+        <SfIconShoppingCart size="sm" />
+      </template>
+      Add to cart
+    </SfButton>
   </div>
 </template>

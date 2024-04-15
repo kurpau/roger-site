@@ -1,9 +1,11 @@
 <template>
-  <NavbarTop />
+  <div class="flex flex-col h-screen">
+    <NavbarTop />
 
-  <div class="container h-dvh">
-    <slot />
+    <div>
+      <slot />
+    </div>
+
+    <Footer class="mt-auto" />
   </div>
-
-  <Footer />
 </template>
