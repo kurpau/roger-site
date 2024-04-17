@@ -1,55 +1,31 @@
 <template>
-  <div
-    class="rounded-md border hover:shadow-lg border-neutral-200 max-w-[300px]"
-  >
+  <div class="rounded-md border hover:shadow-lg border-neutral-200 max-w-[300px]">
     <div class="relative">
-      <NuxtLink class="block" :to="`/products/${id}`">
-        <NuxtImg
-          format="webp"
-          :src="thumbnail"
-          alt="Great product"
-          class="block object-cover h-auto rounded-md aspect-square"
-          width="300"
-          height="300"
-        />
+      <NuxtLink class="block" :to="`/products/${product.id}`">
+        <NuxtImg format="webp" :src="product.thumbnail" alt="Great product"
+          class="block object-cover h-auto rounded-md aspect-square" width="300" height="300" />
       </NuxtLink>
-      <SfButton
-        variant="tertiary"
-        size="sm"
-        square
+      <SfButton variant="tertiary" size="sm" square
         class="absolute bottom-0 right-0 mr-2 mb-2 bg-white ring-1 ring-inset ring-neutral-200 !rounded-full"
-        aria-label="Add to wishlist"
-      >
+        aria-label="Add to wishlist">
         <SfIconFavorite size="sm" />
       </SfButton>
     </div>
     <div class="p-4 border-t border-neutral-200">
-      <SfLink
-        :tag="NuxtLink"
-        :href="`/products/${id}`"
-        variant="secondary"
-        class="no-underline"
-      >
-        {{ title }}
+      <SfLink :tag="NuxtLink" :href="`/products/${product.id}`" variant="secondary" class="no-underline">
+        {{ product.title }}
       </SfLink>
       <div class="flex items-center pt-1">
         <SfRating size="xs" :value="5" :max="5" />
 
-        <SfLink
-          :tag="NuxtLink"
-          :href="`/products/${id}`"
-          variant="secondary"
-          class="pl-1 no-underline"
-        >
+        <SfLink :tag="NuxtLink" :href="`/products/${product.id}`" variant="secondary" class="pl-1 no-underline">
           <SfCounter size="xs">123</SfCounter>
         </SfLink>
       </div>
-      <p
-        class="block py-2 font-normal leading-5 typography-text-sm text-neutral-700"
-      >
-        {{ description }}
+      <p class="block py-2 font-normal leading-5 typography-text-sm text-neutral-700">
+        {{ product.description }}
       </p>
-      <span class="block pb-2 font-bold typography-text-lg">{{ price }}€</span>
+      <span class="block pb-2 font-bold typography-text-lg">{{ product.variants[0].prices[0].amount }}€</span>
       <SfButton size="sm">
         <template #prefix>
           <SfIconShoppingCart size="sm" />
@@ -73,5 +49,5 @@ import {
 import { resolveComponent } from "vue";
 
 const NuxtLink = resolveComponent("NuxtLink");
-defineProps(["title", "description", "price", "thumbnail", "id"]);
+defineProps(["product"]);
 </script>

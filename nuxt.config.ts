@@ -5,7 +5,7 @@ export default defineNuxtConfig({
     // prerender index route by default
     "/": { prerender: true },
   },
-  modules: ["@nuxtjs/tailwindcss", "nuxt-medusa", "@nuxt/image"],
+  modules: ["@nuxtjs/tailwindcss", "nuxt-medusa", "@nuxt/image", "@pinia/nuxt"],
   image: {
     domains: ["medusa-public-images.s3.eu-west-1.amazonaws.com"],
   },

@@ -1,16 +1,18 @@
 <script setup lang="ts">
+import { SfButton, SfIconShoppingCart } from "@storefront-ui/vue";
+
 defineProps(["product"]);
 </script>
 
 <template>
-  <div class="m-auto max-w-5xl card">
+  <div class="m-auto card">
     <div class="grid grid-cols-2 gap-10">
       <div class="p-7">
         <NuxtImg
           :src="product.thumbnail"
           alt="product img"
           class="my-7 mx-auto"
-          width="400"
+          width="500"
         />
       </div>
       <div class="p-7">
@@ -20,6 +22,13 @@ defineProps(["product"]);
         </p>
         <h3 class="pb-2 mb-4 font-bold border-b-2">Product description:</h3>
         <p class="mb-7">{{ product.description }}</p>
+
+        <SfButton size="sm">
+          <template #prefix>
+            <SfIconShoppingCart size="sm" />
+          </template>
+          Add to cart
+        </SfButton>
       </div>
     </div>
   </div>

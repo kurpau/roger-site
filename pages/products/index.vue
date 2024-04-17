@@ -10,18 +10,10 @@ useHead({
 
 <template>
   <section>
-    <div
-      class="grid grid-cols-1 gap-4 content-around md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5"
-    >
+    <div class="grid grid-cols-1 gap-4 content-around md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
       <p v-if="!products.length">No products found</p>
       <div v-for="product in products" :key="product.id">
-        <ProductCard
-          :id="product.id"
-          :thumbnail="product.thumbnail"
-          :title="product.title"
-          :description="product.description"
-          :price="product.variants[0].prices[0].amount"
-        />
+        <ProductCard :product="product" />
       </div>
     </div>
   </section>
