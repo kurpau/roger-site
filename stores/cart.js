@@ -26,7 +26,12 @@ export const useCartStore = defineStore("cart", {
 
     async updateCart(payload) {
       const client = useMedusaClient();
-      const cartId = this.cart.id;
+      let cartId = this.cart.id;
+
+      if (!cartId) {
+        await this.createCart();
+        cartId = this.cart.id;
+      }
       const { cart } = await client.carts.update(cartId, payload);
       this.setCart(cart);
     },
