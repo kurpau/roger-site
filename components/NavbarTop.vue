@@ -6,9 +6,9 @@
         <picture>
           <source srcset="
               https://storage.googleapis.com/sfui_docs_artifacts_bucket_public/production/vsf_logo.svg
-            " media="(min-width: 768px)" />
+            " media="(min-width: 768px)">
           <img src="https://storage.googleapis.com/sfui_docs_artifacts_bucket_public/production/vsf_logo_sign.svg"
-            alt="Sf Logo" class="w-8 h-8 md:h-6 md:w-[176px] lg:w-[12.5rem] lg:h-[1.75rem]" />
+            alt="Sf Logo" class="w-8 h-8 md:h-6 md:w-[176px] lg:w-[12.5rem] lg:h-[1.75rem]">
         </picture>
       </NuxtLink>
       <SfButton aria-label="Open categories" class="order-first mr-4 lg:hidden lg:order-1" square variant="tertiary">
@@ -34,6 +34,7 @@
               </NuxtLink>
             </li>
           </ul>
+          <dropdowns-cart-popover />
           <SfButton v-for="actionItem in actionItems" :key="actionItem.ariaLabel"
             class="mr-2 -ml-0.5 rounded-md text-primary-700 hover:bg-primary-100 hover:text-primary-600 active:bg-primary-200 active:text-primary-700"
             :aria-label="actionItem.ariaLabel" variant="tertiary" square>
@@ -49,15 +50,9 @@
   </header>
 </template>
 <script lang="ts" setup>
-import { ref } from "vue";
 import {
   SfButton,
   SfIconShoppingCart,
-  SfIconFavorite,
-  SfIconPerson,
-  SfIconExpandMore,
-  SfInput,
-  SfIconSearch,
   SfIconMenu,
 } from "@storefront-ui/vue";
 
@@ -70,9 +65,4 @@ const actionItems = [
   },
 ];
 
-const inputValue = ref("");
-
-const search = () => {
-  alert(`Successfully found 10 results for ${inputValue.value}`);
-};
 </script>

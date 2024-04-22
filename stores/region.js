@@ -15,12 +15,7 @@ export const useRegionStore = defineStore("region", {
       this.country = payload.country || payload.region.countries[0];
       localStorage.setItem(REGION, JSON.stringify(this.region));
       localStorage.setItem(COUNTRY, JSON.stringify(this.country));
-
-      // Update the cart region
-      const cartStore = useCartStore();
-      cartStore.updateCart({ region_id: this.region.id });
     },
-
     async initializeRegions() {
       try {
         const response = await fetch(
@@ -29,7 +24,7 @@ export const useRegionStore = defineStore("region", {
         const { regions } = await response.json();
         this.regions = regions;
 
-        if (process.browser) {
+        if (import.meta.browser) {
           const regionJSON = localStorage.getItem(REGION);
           const countryJSON = localStorage.getItem(COUNTRY);
 

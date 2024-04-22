@@ -13,9 +13,13 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "^1.0.3",
+    "@nuxt/eslint": "^0.3.8",
     "@nuxt/image": "^1.5.0",
     "@nuxtjs/tailwindcss": "^6.11.4",
     "@storefront-ui/vue": "^2.6.1",
+    "eslint": "^9.1.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-vue": "^9.25.0",
     "nuxt": "^3.8.2",
     "nuxt-medusa": "^0.5.0",
     "vue-router": "^4.2.5"

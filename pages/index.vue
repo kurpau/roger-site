@@ -1,7 +1,7 @@
 <template>
   <div class="text-center">
     <h1>This is the home page where users land</h1>
-    <br />
+    <br>
     <p>
       Apparently and anywhere its and to laminated is he be by when seemed
       escape, math however into nor of business, and concepts its which diet,

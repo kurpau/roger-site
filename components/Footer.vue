@@ -1,28 +1,16 @@
 <template>
   <footer class="pt-10 bg-neutral-100">
     <div
-      class="grid justify-center grid-cols-[1fr_1fr] md:grid-cols-[repeat(4,1fr)] px-4 md:px-6 pb-10 max-w-screen-2xl mx-auto"
-    >
-      <ul
-        v-for="{ label, subcategories } in categories"
-        :key="label"
-        class="grid grid-cols xs:pb-4"
-      >
-        <li
-          class="ml-4 text-lg font-medium leading-7 text-neutral-900 font-body"
-        >
+      class="grid justify-center grid-cols-[1fr_1fr] md:grid-cols-[repeat(4,1fr)] px-4 md:px-6 pb-10 max-w-screen-2xl mx-auto">
+      <ul v-for="{ label, subcategories } in categories" :key="label" class="grid grid-cols xs:pb-4">
+        <li class="ml-4 text-lg font-medium leading-7 text-neutral-900 font-body">
           {{ label }}
         </li>
-        <SfListItem
-          v-for="{ subcategoryLabel, link } in subcategories"
-          :key="subcategoryLabel"
-          class="py-2 !bg-transparent typography-text-sm font-body"
-        >
+        <SfListItem v-for="{ subcategoryLabel, link } in subcategories" :key="subcategoryLabel"
+          class="py-2 !bg-transparent typography-text-sm font-body">
           <SfLink
             class="no-underline text-neutral-600 hover:underline hover:!text-neutral-900 active:underline active:!text-neutral-900"
-            variant="secondary"
-            :href="link"
-          >
+            variant="secondary" :href="link">
             {{ subcategoryLabel }}
           </SfLink>
         </SfListItem>
@@ -30,68 +18,43 @@
     </div>
     <hr />
     <div class="py-10 max-w-screen-2xl md:flex md:mx-auto">
-      <div
-        v-for="{ label, icon, link, details } in contactOptions"
-        :key="label"
-        class="my-4 mx-auto text-center"
-      >
+      <div v-for="{ label, icon, link, details } in contactOptions" :key="label" class="my-4 mx-auto text-center">
         <component :is="icon" size="lg" />
         <p class="py-1 my-2 font-medium typography-text-lg font-body">
-          <SfLink
-            variant="secondary"
+          <SfLink variant="secondary"
             class="no-underline text-neutral-600 hover:underline hover:!text-neutral-900 active:underline active:!text-neutral-900"
-            :href="link"
-          >
+            :href="link">
             {{ label }}
           </SfLink>
         </p>
-        <p
-          v-for="option in details"
-          :key="option"
-          class="leading-5 typography-text-sm text-neutral-600 font-body"
-        >
+        <p v-for="option in details" :key="option" class="leading-5 typography-text-sm text-neutral-600 font-body">
           {{ option }}
         </p>
       </div>
     </div>
-    <div
-      class="justify-end py-10 px-4 mx-auto max-w-screen-2xl md:flex md:py-6 bg-neutral-900"
-    >
+    <div class="justify-end py-10 px-4 mx-auto max-w-screen-2xl md:flex md:py-6 bg-neutral-900">
       <div class="flex gap-x-4 justify-center py-2 md:self-start">
-        <SfButton
-          v-for="{ label, link, icon } in socialMedia"
-          :key="label"
-          tag="a"
-          square
-          variant="tertiary"
+        <SfButton v-for="{ label, link, icon } in socialMedia" :key="label" tag="a" square variant="tertiary"
           class="text-white active:text-white hover:text-white hover:!bg-neutral-500 active:!bg-transparent"
-          :href="link"
-          :aria-label="`Go to ${label} page`"
-        >
+          :href="link" :aria-label="`Go to ${label} page`">
           <component :is="icon" />
         </SfButton>
       </div>
-      <div
-        class="flex gap-6 justify-center items-center py-2 my-4 md:my-0 md:ml-auto"
-      >
-        <SfLink
-          v-for="{ label, link } in bottomLinks"
-          :key="label"
-          variant="secondary"
+      <div class="flex gap-6 justify-center items-center py-2 my-4 md:my-0 md:ml-auto">
+        <SfLink v-for="{ label, link } in bottomLinks" :key="label" variant="secondary"
           class="text-white no-underline hover:text-white hover:underline active:text-white active:underline typography-text-sm"
-          :href="link"
-        >
+          :href="link">
           {{ label }}
         </SfLink>
       </div>
       <p
-        class="flex justify-center items-center py-2 leading-5 text-center md:ml-6 typography-text-sm text-white/50 font-body"
-      >
+        class="flex justify-center items-center py-2 leading-5 text-center md:ml-6 typography-text-sm text-white/50 font-body">
         @2024 Fansr
       </p>
     </div>
   </footer>
 </template>
+
 <script lang="ts" setup>
 import {
   SfIconContactSupport,

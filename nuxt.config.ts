@@ -5,7 +5,13 @@ export default defineNuxtConfig({
     // prerender index route by default
     "/": { prerender: true },
   },
-  modules: ["@nuxtjs/tailwindcss", "nuxt-medusa", "@nuxt/image", "@pinia/nuxt"],
+  modules: [
+    "@nuxtjs/tailwindcss",
+    "nuxt-medusa",
+    "@nuxt/image",
+    "@pinia/nuxt",
+    "@nuxt/eslint"
+  ],
   image: {
     domains: ["medusa-public-images.s3.eu-west-1.amazonaws.com"],
   },
@@ -15,4 +21,9 @@ export default defineNuxtConfig({
       meta: [{ name: "description", content: "Preped meals to your door" }],
     },
   },
+  eslint: {
+    config: {
+      stylistic: false
+    }
+  }
 });
