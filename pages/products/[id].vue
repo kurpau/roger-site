@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { SfButton, SfIconShoppingCart } from "@storefront-ui/vue";
-const { params } = useRoute();
 import { useCartStore } from "@/stores/cart";
 import { useRegionStore } from "@/stores/region";
 import { formatPrice } from "~/utils/format-price";
+import { SfButton, SfIconShoppingCart } from "@storefront-ui/vue";
+const { params } = useRoute();
 const client = useMedusaClient();
 
 const cartStore = useCartStore();
@@ -88,6 +88,7 @@ const addToCart = async (item) => {
 
 <template>
   <div>
+
     <Head>
       <Title>Fansr | {{ product.title }}</Title>
       <Meta name="description" :content="product.description" />
@@ -96,12 +97,7 @@ const addToCart = async (item) => {
     <div class="m-auto card">
       <div class="grid grid-cols-2 gap-10">
         <div class="p-7">
-          <NuxtImg
-            :src="product.thumbnail"
-            alt="product img"
-            class="my-7 mx-auto"
-            width="500"
-          />
+          <NuxtImg :src="product.thumbnail" alt="product img" class="my-7 mx-auto" width="500" />
         </div>
         <div class="p-7">
           <h2 class="my-7 text-4xl">{{ product.title }}</h2>
@@ -112,15 +108,8 @@ const addToCart = async (item) => {
           <h3 class="pb-2 mb-4 font-bold border-b-2">Product description:</h3>
           <p class="mb-7">{{ product.description }}</p>
           <div class="my-7">
-            <products-options
-              :options="product.options"
-              @updateSelectedOptions="updateSelectedOptions"
-            />
-            <quantity-selector
-              :quantity="quantity"
-              @increment="increment"
-              @decrement="decrement"
-            />
+            <products-options :options="product.options" @updateSelectedOptions="updateSelectedOptions" />
+            <quantity-selector :quantity="quantity" @increment="increment" @decrement="decrement" />
           </div>
           <SfButton @click="addToCart({ variant_id, quantity })" size="sm">
             <template #prefix>

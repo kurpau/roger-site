@@ -34,11 +34,11 @@
               </div>
             </div>
             <div>
-              <!-- <nuxt-link to="/shopping-bag"> -->
-              <button class="text-ui-dark py-2 text-sm w-full">
-                View Shopping Bag
-              </button>
-              <!-- </nuxt-link> -->
+              <nuxt-link to="/shopping-bag">
+                <button class="text-ui-dark py-2 text-sm w-full">
+                  View Shopping Bag
+                </button>
+              </nuxt-link>
             </div>
           </div>
         </div>
